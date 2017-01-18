@@ -29,7 +29,7 @@ _git_chore(){
 }
 
 _git_authors(){
-  __gitcomp "-l --list"
+  __gitcomp "-l --list --no-email"
 }
 
 _git_contrib(){
@@ -61,7 +61,18 @@ _git_delete_tag(){
 }
 
 _git_effort(){
-  __gitcomp "--above"
+  __git_has_doubledash && return
+
+  case "$cur" in
+  --*)
+    __gitcomp "
+      --above
+      $__git_log_common_options
+      $__git_log_shortlog_options
+      "
+    return
+    ;;
+  esac
 }
 
 _git_extras(){
@@ -69,7 +80,7 @@ _git_extras(){
 }
 
 __git_extras_workflow(){
-  __gitcomp "$(__git_heads | grep ^$1/ | sed s/^$1\\///g) finish"
+  __gitcomp "$(__git_heads | grep -- ^$1/ | sed s/^$1\\///g) finish"
 }
 
 _git_feature(){
@@ -98,12 +109,33 @@ _git_missing(){
     __gitcomp "$(git for-each-ref --format='%(refname:short)')"
 }
 
+_git_psykorebase(){
+  __gitcomp "$(__git_heads) --continue --no-ff"
+}
+
+_git_reauthor(){
+  local prev="${COMP_WORDS[COMP_CWORD-1]}"
+  local comp
+
+  if [[ "${prev}" == '--type' ]] || [[ "${prev}" == '-t' ]]; then
+    comp='author committer full'
+  else
+    comp='--all --correct-email --correct-name --old-email --type --use-config'
+  fi
+
+   __gitcomp "${comp}"
+}
+
 _git_refactor(){
   __git_extras_workflow "refactor"
 }
 
 _git_scp(){
   __git_complete_remote_or_refspec
+}
+
+_git_stamp(){
+  __gitcomp '--replace -r'
 }
 
 _git_rscp(){

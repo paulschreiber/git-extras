@@ -7,11 +7,19 @@ git-fork(1) -- Fork a repo on github
 
 ## DESCRIPTION
 
-  Fork the given github repo. Like clone but forks first.
+  If a github repo url is given, fork the repo. Like clone but forks first.
 
   1. forks the repo on github
   2. clones the repo into the current dir
-  3. adds the original repo as a remote
+  3. adds the original repo as a remote called `upstream`
+
+  If a url is not given and the current dir is a github repo, fork the repo.
+
+  1. forks the current repo
+  2. rename the `origin` remote repo to `upstream`
+  3. adds the forked repo as a remote called `origin`
+
+  Remotes will use ssh if you have it configured with GitHub, if not, https will be used.
 
 ## EXAMPLE
 
@@ -31,8 +39,12 @@ git-fork(1) -- Fork a repo on github
 
       origin          git@github.com:<user>/expect.js (fetch)
       origin          git@github.com:<user>/expect.js (push)
-      original        git@github.com:LearnBoost/expect.js (fetch)
-      original        git@github.com:LearnBoost/expect.js (push)
+      upstream        git@github.com:LearnBoost/expect.js (fetch)
+      upstream        git@github.com:LearnBoost/expect.js (push)
+
+  If the current dir is a clone of expect.js, this has the same effect:
+
+    $ git fork
 
 
 ## AUTHOR

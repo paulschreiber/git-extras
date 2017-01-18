@@ -1,19 +1,36 @@
 #!/usr/bin/env bash
 
-VERSION="2.2.0"
+VERSION="4.3.0-dev"
+INSTALL_SCRIPT="https://raw.githubusercontent.com/tj/git-extras/master/install.sh"
 
 update() {
-  local bin=$(which git-extras)
+  local bin="$(which git-extras)"
   local prefix=${bin%/*/*}
   local orig=$PWD
 
-  cd /tmp \
-    && rm -fr ./git-extras \
-    && git clone --depth 1 https://github.com/tj/git-extras.git \
-    && cd git-extras \
-    && PREFIX="$prefix" make install \
+  curl -s $INSTALL_SCRIPT | PREFIX="$prefix" bash /dev/stdin \
     && cd "$orig" \
     && echo "... updated git-extras $VERSION -> $(git extras --version)"
+}
+
+updateForWindows() {
+  local bin="$(which git-extras)"
+  local prefix=${bin%/*/*}
+  local orig=$PWD
+  
+  # we need to clean up /tmp manually on windows
+  cd /tmp \
+    && rm -rf ./git-extras \
+    && echo "Setting up 'git-exras'...." \
+    && git clone https://github.com/tj/git-extras.git &> /dev/null \
+    && cd git-extras \
+	&& git checkout \
+        $(git describe --tags $(git rev-list --tags --max-count=1)) \
+        &> /dev/null \
+	&& ./install.cmd "$prefix" \
+	&& cd "$orig" \
+	&& echo "... updated git-extras $VERSION -> $(git extras --version)"
+  rm -rf /tmp/git-extras &> /dev/null
 }
 
 case "$1" in
@@ -21,9 +38,17 @@ case "$1" in
     echo $VERSION && exit 0
     ;;
   update)
-    update
+    platform=$(uname -s)
+    if [ "${platform::9}" = "CYGWIN_NT" ] || \
+      [ "${platform::5}" = "MINGW" ] || \
+      [ "${platform::7}" = "MSYS_NT" ]
+    then
+      updateForWindows
+    else
+      update
+    fi
     ;;
   *)
-    man git-extras
+    git extras --help
     ;;
 esac

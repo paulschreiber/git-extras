@@ -1,12 +1,16 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 abort() {
   echo $@
   exit 1
 }
 
+url="$1"
+
+test -z "$url" && url=`git remote get-url origin 2> /dev/null` && origin=true
+
 # validate repo url
-test -z "$1" && abort "github repo needs to be specified as an argument"
+test -z "$url" && abort "github repo needs to be specified as an argument"
 
 # validate user
 echo "Enter your github username"
@@ -14,21 +18,41 @@ read user
 [ "$user" = 'n' ] && abort "git username required"
 
 # extract owner + project from repo url
-project=${1##*/}
-owner=${1%/$project}
-owner=${owner##*/}
+project=${url##*/}
+owner=${url%/$project}
+project=${project%.git}
+if [[ $owner == git@* ]]; then
+  owner=${owner##*:}
+else
+  owner=${owner##*/}
+fi
 
 # validate
 [ -z "$project" -o -z "$owner" ] && abort "github repo needs to be specified as an argument"
 
-# create pull request
+# create fork
 curl -X POST -u "$user" "https://api.github.com/repos/$owner/$project/forks"
 [ $? = 0 ] || abort "fork failed"
 
-# clone forked repo into current dir
-git clone "git@github.com:$user/$project" "$project"
+# Check if user has ssh configured with GitHub
+ssh -o BatchMode=yes git@github.com exit >/dev/null 2>&1
+ssh_exit_code=$?
+if [[ "$ssh_exit_code" = 0 ]] || [[ "$ssh_exit_code" = 1 ]]; then
+  remote_prefix="git@github.com:"
+else
+  remote_prefix="https://github.com/"
+fi
 
-# add reference to origin fork so can merge in upstream changes
-cd "$project"
-git remote add upstream "git@github.com:$owner/$project"
-git fetch upstream
+if [ "$origin" = true ]; then
+    git remote rename origin upstream
+    git remote add origin "$remote_prefix$user/$project"
+    git fetch origin
+else
+    # clone forked repo into current dir
+    git clone "$remote_prefix$user/$project" "$project"
+
+    # add reference to origin fork so can merge in upstream changes
+    cd "$project"
+    git remote add upstream "$remote_prefix$owner/$project"
+    git fetch upstream
+fi

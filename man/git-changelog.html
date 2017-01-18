@@ -65,7 +65,7 @@
 
   <ol class='man-decor man-head man head'>
     <li class='tl'>git-changelog(1)</li>
-    <li class='tc'>Git Extras</li>
+    <li class='tc'></li>
     <li class='tr'>git-changelog(1)</li>
   </ol>
 
@@ -83,7 +83,7 @@
 
 <p>  Generates a changelog from <span class="man-ref">git<span class="s">(1)</span></span> tags (annotated or lightweight) and commit messages. Existing changelog files with filenames that begin with <em>Change</em> or <em>History</em> will be identified automatically with a case insensitive match pattern and existing content will be appended to the new output generated--this behavior can be disabled by specifying the prune option (-p|--prune-old). The generated file will be opened in <strong>$EDITOR</strong> when set.</p>
 
-<p>  If no tags exist, then all commits are output; if tags exist, then only the most-recent commits are output up to the last identified tag. This behavior can be changed by specifing one or both of the range options (-f|--final-tag and -s|--start-tag).</p>
+<p>  If no tags exist, then all commits are output; if tags exist, then only the most-recent commits are output up to the last identified tag. This behavior can be changed by specifying one or both of the range options (-f|--final-tag and -s|--start-tag).</p>
 
 <h2 id="OPTIONS">OPTIONS</h2>
 
@@ -114,6 +114,10 @@
 <p>  -n, --no-merges</p>
 
 <p>  Filters out merge commits (commits with more than 1 parent) from generated changelog.</p>
+
+<p>  -m, --merges-only</p>
+
+<p>  Uses only merge commits (commits with more than 1 parent) for generated changelog. It also changes the default format to include the merge commit messages body, as on github the commits subject line only contains the branch name but no information about the content of the merge.</p>
 
 <p>  -p, --prune-old</p>
 
@@ -159,7 +163,7 @@
 
 <h2 id="AUTHOR">AUTHOR</h2>
 
-<p>Written by Mark Eissler &lt;<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x6d;&#x61;&#x72;&#x6b;&#64;&#x6d;&#x69;&#120;&#x74;&#x75;&#114;&#x2e;&#99;&#111;&#109;" data-bare-link="true">&#109;&#x61;&#x72;&#107;&#64;&#109;&#x69;&#x78;&#116;&#117;&#x72;&#x2e;&#x63;&#111;&#109;</a>&gt;</p>
+<p>Written by Mark Eissler &lt;<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#109;&#x61;&#x72;&#x6b;&#64;&#x6d;&#x69;&#x78;&#116;&#117;&#114;&#x2e;&#x63;&#111;&#x6d;" data-bare-link="true">&#x6d;&#97;&#114;&#x6b;&#64;&#109;&#x69;&#x78;&#116;&#117;&#114;&#x2e;&#x63;&#x6f;&#x6d;</a>&gt;</p>
 
 <h2 id="REPORTING-BUGS">REPORTING BUGS</h2>
 
@@ -172,7 +176,7 @@
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>March 2015</li>
+    <li class='tc'>December 2015</li>
     <li class='tr'>git-changelog(1)</li>
   </ol>
 

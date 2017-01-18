@@ -76,11 +76,12 @@
 
 <h2 id="SYNOPSIS">SYNOPSIS</h2>
 
-<p><code>git-release</code> &lt;tagname&gt; [&lt;remote&gt;]</p>
+<p><code>git-release</code> &lt;tagname&gt; [-r &lt;remote&gt;] [-m &lt;commit info%gt;] [-c]</p>
 
 <h2 id="DESCRIPTION">DESCRIPTION</h2>
 
-<p>  Commits changes with message "Release &lt;tagname&gt;", tags with the given &lt;tagname&gt; and pushes the branch / tags.</p>
+<p>  Commits changes with message "Release &lt;tagname&gt;" or custom commit information, tags with the given &lt;tagname&gt; and pushes the branch / tags.
+  Optionally it generates a changelog (see git-changelog) and a remote can be defined. The order of first -c or -r does not matter.</p>
 
 <h2 id="OPTIONS">OPTIONS</h2>
 
@@ -88,9 +89,17 @@
 
 <p>  The name of the newly created tag. Also used in tag comment.</p>
 
-<p>  &lt;remote&gt;</p>
+<p>  -r &lt;remote&gt;</p>
 
 <p>  The "remote" repository that is destination of a push operation: it is passed to git push.</p>
+
+<p>  -m &lt;commit info&gt;</p>
+
+<p>  use the custom commit information instead of the default message "Release &lt;tagname&gt;" .</p>
+
+<p>  -c</p>
+
+<p>  Generates or populates the changelog with all commit message since the last tag. For more info see git-changelog..</p>
 
 <h2 id="EXAMPLES">EXAMPLES</h2>
 
@@ -98,15 +107,25 @@
 <li><p>Release commit with the given &lt;tagname&gt;.</p>
 
 <p>$ git release 0.1.0</p></li>
+<li><p>Release commit with the given &lt;tagname&gt; and custom commit message.</p>
+
+<p>$ git release 0.1.0 -m "+ powerful feature added."</p></li>
 <li><p>Release commit with the given &lt;tagname&gt; and push to specific remote.</p>
 
-<p>$ git release 0.1.0 github</p></li>
+<p>$ git release 0.1.0 -r github</p></li>
+<li><p>Release commit with the given &lt;tagname&gt; and populate changelog.</p>
+
+<p>$ git release 0.1.0 -c</p></li>
+<li><p>Release commit with the given &lt;tagname&gt;, populate changelog, and push to specific remote.</p>
+
+<p>$ git release 0.1.0 -r github -c</p></li>
 </ul>
 
 
 <h2 id="AUTHOR">AUTHOR</h2>
 
-<p>Written by Tj Holowaychuk &lt;<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#116;&#x6a;&#64;&#x76;&#105;&#x73;&#x69;&#111;&#110;&#x2d;&#x6d;&#101;&#x64;&#x69;&#97;&#46;&#99;&#97;" data-bare-link="true">&#116;&#x6a;&#64;&#118;&#105;&#x73;&#105;&#x6f;&#x6e;&#45;&#109;&#x65;&#x64;&#105;&#97;&#x2e;&#x63;&#97;</a>&gt;</p>
+<p>Written by Tj Holowaychuk &lt;<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#116;&#x6a;&#64;&#x76;&#105;&#115;&#x69;&#x6f;&#x6e;&#x2d;&#109;&#x65;&#100;&#105;&#x61;&#x2e;&#99;&#x61;" data-bare-link="true">&#116;&#106;&#x40;&#x76;&#x69;&#115;&#x69;&#x6f;&#x6e;&#x2d;&#x6d;&#101;&#x64;&#x69;&#x61;&#46;&#x63;&#x61;</a>&gt;
+Extended by David Hartmann &lt;<a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#58;&#100;&#104;&#64;&#x74;&#115;&#x6c;&#x2e;&#x69;&#111;" data-bare-link="true">&#x64;&#104;&#64;&#116;&#x73;&#x6c;&#x2e;&#105;&#x6f;</a>&gt;</p>
 
 <h2 id="REPORTING-BUGS">REPORTING BUGS</h2>
 
@@ -119,7 +138,7 @@
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>November 2014</li>
+    <li class='tc'>December 2015</li>
     <li class='tr'>git-release(1)</li>
   </ol>
 

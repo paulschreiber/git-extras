@@ -1,7 +1,7 @@
 .\" generated with Ronn/v0.7.3
 .\" http://github.com/rtomayko/ronn/tree/0.7.3
 .
-.TH "GIT\-EXTRAS" "1" "November 2014" "" ""
+.TH "GIT\-EXTRAS" "1" "December 2016" "" "Git Extras"
 .
 .SH "NAME"
 \fBgit\-extras\fR \- Awesome GIT utilities
@@ -33,7 +33,10 @@ Self update\.
 \fBgit\-alias(1)\fR Define, search and show aliases
 .
 .IP "\(bu" 4
-\fBgit\-archive\-file(1)\fR Export the current HEAD of the git repository to a archive
+\fBgit\-archive\-file(1)\fR Export the current HEAD of the git repository to an archive
+.
+.IP "\(bu" 4
+\fBgit\-authors(1)\fR Generate authors report
 .
 .IP "\(bu" 4
 \fBgit\-back(1)\fR Undo and Stage latest commits
@@ -42,7 +45,13 @@ Self update\.
 \fBgit\-bug(1)\fR Create bug branch
 .
 .IP "\(bu" 4
-\fBgit\-changelog(1)\fR Generate the changelog report
+\fBgit\-changelog(1)\fR Generate a changelog report
+.
+.IP "\(bu" 4
+\fBgit\-chore(1)\fR Create chore branch
+.
+.IP "\(bu" 4
+\fBgit\-clear(1)\fR Rigorously clean up a repository
 .
 .IP "\(bu" 4
 \fBgit\-commits\-since(1)\fR Show commit logs since some date
@@ -69,10 +78,13 @@ Self update\.
 \fBgit\-delete\-tag(1)\fR Delete tags
 .
 .IP "\(bu" 4
+\fBgit\-delta(1)\fR Lists changed files
+.
+.IP "\(bu" 4
 \fBgit\-effort(1)\fR Show effort statistics on file(s)
 .
 .IP "\(bu" 4
-\fBgit\-feature(1)\fR Create feature branch
+\fBgit\-feature(1)\fR Create/Merge feature branch
 .
 .IP "\(bu" 4
 \fBgit\-fork(1)\fR Fork a repo on github
@@ -87,25 +99,46 @@ Self update\.
 \fBgit\-graft(1)\fR Merge and destroy a given branch
 .
 .IP "\(bu" 4
+\fBgit\-guilt(1)\fR calculate change between two revisions
+.
+.IP "\(bu" 4
+\fBgit\-ignore\-io(1)\fR Get sample gitignore file
+.
+.IP "\(bu" 4
 \fBgit\-ignore(1)\fR Add \.gitignore patterns
 .
 .IP "\(bu" 4
 \fBgit\-info(1)\fR Returns information on current repository
 .
 .IP "\(bu" 4
+\fBgit\-line\-summary(1)\fR Show repository summary by line
+.
+.IP "\(bu" 4
 \fBgit\-local\-commits(1)\fR List local commits
+.
+.IP "\(bu" 4
+\fBgit\-lock(1)\fR Lock a file excluded from version control
 .
 .IP "\(bu" 4
 \fBgit\-locked(1)\fR ls files that have been locked
 .
 .IP "\(bu" 4
-\fBgit\-lock(1)\fR Lock a file excluded from version control
+\fBgit\-merge\-into(1)\fR Merge one branch into another
+.
+.IP "\(bu" 4
+\fBgit\-merge\-repo(1)\fR Merge two repo histories
 .
 .IP "\(bu" 4
 \fBgit\-missing(1)\fR Show commits missing from another branch
 .
 .IP "\(bu" 4
 \fBgit\-pr(1)\fR Checks out a pull request locally
+.
+.IP "\(bu" 4
+\fBgit\-psykorebase(1)\fR Rebase a branch with a merge commit
+.
+.IP "\(bu" 4
+\fBgit\-reauthor(1)\fR Rewrite history to change author\'s identity
 .
 .IP "\(bu" 4
 \fBgit\-rebase\-patch(1)\fR Rebases a patch
@@ -126,10 +159,25 @@ Self update\.
 \fBgit\-reset\-file(1)\fR Reset one file
 .
 .IP "\(bu" 4
+\fBgit\-root(1)\fR show path of root
+.
+.IP "\(bu" 4
+\fBgit\-scp(1)\fR Copy files to SSH compatible \fBgit\-remote\fR
+.
+.IP "\(bu" 4
+\fBgit\-sed(1)\fR replace patterns in git\-controlled files
+.
+.IP "\(bu" 4
 \fBgit\-setup(1)\fR Set up a git repository
 .
 .IP "\(bu" 4
+\fBgit\-show\-merged\-branches(1)\fR Show merged branches
+.
+.IP "\(bu" 4
 \fBgit\-show\-tree(1)\fR show branch tree of commit history
+.
+.IP "\(bu" 4
+\fBgit\-show\-unmerged\-branches(1)\fR Show unmerged branches
 .
 .IP "\(bu" 4
 \fBgit\-squash(1)\fR Import changes from a branch
