@@ -16,149 +16,164 @@ Patches and Suggestions
 ```````````````````````
 - Jonhnny Weslley
 - LeeW
+- Niklas Schlimm
 - nickl-
 - timfeirg
 - CJ
+- Damien Tardy-Panis
 - Mark Eissler
 - Leila Muhtasib
+- Richard Fearn
 - Jesús Espino
-- Jan Schulz
-- Andrew Janke
-- David Baumgold
 - Kenneth Reitz
+- David Baumgold
+- Andrew Janke
+- Jan Schulz
+- Mark Pitman
 - Luke Childs
 - Sasha Khamkov
+- Robin Winslow
 - Yi EungJun
 - grindhold
-- Damian Krzeminski
-- Chris Hall
-- Aggelos Orfanakos
 - NANRI
+- Chris Hall
+- Damian Krzeminski
+- Aggelos Orfanakos
 - Camille Reynders
 - Rico Sta. Cruz
-- Takuma Yamaguchi
 - Rémy HUBSCHER
-- Phally
 - Alexander Krasnukhin
+- Takuma Yamaguchi
+- Phally
+- Julio Napurí
+- Hogan Long
+- Ivan Malopinsky
+- Brian J Brennan
 - wooorm
 - Philipp Klose
-- Julio Napurí
-- Brian J Brennan
-- Ivan Malopinsky
-- gisphm
-- Hogan Long
 - Jonathan "Duke" Leto
 - Nils Winkler
-- Jean Jordaan
-- Alexis GRIMALDI
-- Allan Odgaard
-- Andre Cerqueira
-- Curtis McEnroe
-- David Rogers
-- Devin Withers
-- Domenico Rotiroti
-- Evan Grim
-- Florian H
-- Gert Van Gool
-- Guillaume Seren
-- Hozefa
-- Justin Guenther
-- Kylie McClain
-- Marc Harter
-- Matiss
-- Nate Jones
-- Newell Zhu
-- Patryk Małek
-- Paul Schreiber
-- Richard Littauer
-- Tom Vincent
-- Wil Moore III
+- gisphm
 - William Montgomery
+- David Rogers
+- Ye Lin Aung
+- Andre Cerqueira
+- Gert Van Gool
+- Kylie McClain
+- Curtis McEnroe
+- Guillaume Seren
 - go2null
-- luozexuan
+- Hozefa
+- Paul Schreiber
+- Patryk Małek
+- Newell Zhu
+- Marc Harter
+- Nate Jones
 - phigoro
 - soffolk
-- George Crabtree
-- Emil Kjelsrud
-- jykntr
-- Dung Quang
-- Kevin Woo
-- Konstantin Schukraft
-- zeroDivisible
-- Leandro López
-- David Hartmann
-- Dave James Miller
-- Maarten Winter
-- meza
-- Daniel Schildt
-- Mathieu D. (MatToufoutu)
-- neydroid
-- Matt Colyer
-- Matthew Avant
-- Michael Komitee
-- Michael Matuzak
-- Moritz Grauel
-- Dan Jackson
-- Nate Fischer
-- Andrei Petcu
-- Nathan Rajlich
-- nulltask
-- Nick Campbell
-- Nick Payne
-- Damien Tardy-Panis
-- Niklas Fiekas
-- Craig MacGregor
-- Ciro Nunes
-- ☃ pitr
-- Carlos Rodríguez
-- Carl Casbolt
-- Prayag Verma
-- R. Martinho Fernandes
-- Raphael Fleischlin
-- Rasmus Wriedt Larsen
-- Riceball LEE
-- Akim Demaille
-- Bruno Sutic
-- Rob Kennedy
-- Ryan Bohn
-- Brandon Zylstra
-- Sam Thursfield
-- Ben Parnell
+- Alexis GRIMALDI
+- Domenico Rotiroti
+- Devin Withers
+- Jean Jordaan
+- Matiss
+- Allan Odgaard
+- Evan Grim
+- Tom Vincent
+- Justin Guenther
+- Richard Littauer
+- Florian H
+- Wil Moore III
 - Stefan VanBuren
 - Stephen Mathieson
 - Steve Mao
-- Balazs Nadasdi
-- Aurélien Scoubeau
-- Antoine Beaupré
 - Todd Wolfson
 - Tom Ashworth
 - Tony
 - TweeKane
 - Valérian Galliat
-- Ammar Najjar
-- Amir Tocker
 - Xiaopei Li
-- Andy
 - creynders
-- dead-horse
+- Adam Parkin
 - eszabpt
-- Andrey Elizarov
+- jykntr
+- meza
+- neydroid
+- nulltask
+- zeroDivisible
+- Étienne BERSAC
+- ☃ pitr
+- dead-horse
+- Adriaan Zonnenberg
+- Akim Demaille
 - Alex McHale
-- Andrew Starr-Bochicchio
+- Amir Tocker
+- Ammar Najjar
+- Andreas Duering
+- Andrei Petcu
+- Andrew Griffiths
 - Andrew Marcinkevičius
-- Jan Krueger
+- Andrew Starr-Bochicchio
+- Andrey Elizarov
+- Angel Aguilera
+- Antoine Beaupré
+- Aurélien Scoubeau
+- Balazs Nadasdi
+- Ben Parnell
+- Brandon Zylstra
+- Brian Goad
+- Bruno Sutic
+- Carl Casbolt
+- Carlos Rodríguez
+- Ciro Nunes
+- Craig MacGregor
+- Dan Jackson
+- Dan Kilman
+- Daniel Bruder
+- Daniel Schildt
+- Dave James Miller
+- David Hartmann
+- Dung Quang
+- Emil Kjelsrud
+- George Crabtree
+- Greg Allen
+- Guillermo Rauch
+- Gunnlaugur Thor Briem
+- J.C. Yamokoski
 - James Manning
+- Jan Krueger
 - Jarod Stewart
 - Jason Young
-- Adam Parkin
 - Jens K. Mueller
+- Jeremy Lin
 - Jesse Sipprell
-- Gunnlaugur Thor Briem
 - Jianjin Fan
 - Johannes Ewald
 - John Evans
 - John Hoffmann
 - Jon Ander Peñalba
-- Guillermo Rauch
-- Greg Allen
 - Joshua Appelman
+- Justin Dugger
+- Kevin Woo
+- Konstantin Schukraft
+- Leandro López
+- Maarten Winter
+- Mathieu D. (MatToufoutu)
+- Matt Colyer
+- Matthew Avant
+- Michael Komitee
+- Michael Matuzak
+- Moritz Grauel
+- Nate Fischer
+- Nathan Rajlich
+- Nick Campbell
+- Nick Payne
+- Niklas Fiekas
+- Prayag Verma
+- R. Martinho Fernandes
+- Raphael Fleischlin
+- Rasmus Wriedt Larsen
+- Riceball LEE
+- Rob Kennedy
+- Ryan Bohn
+- Sam Thursfield
+- Sean Molenaar
