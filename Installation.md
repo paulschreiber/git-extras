@@ -27,6 +27,12 @@ $ sudo yum install git-extras
 $ sudo apt-get install git-extras
 ```
 
+### Nix/NixOS
+
+```bash
+$ nix-env -i git-extras
+```
+
 ### Mac OS X with Homebrew
 
 ```bash
@@ -105,6 +111,18 @@ One-liner:
 ```bash
 curl -sSL http://git.io/git-extras-setup | sudo bash /dev/stdin
 ```
+
+## Installing as Zsh plugin
+
+[Zplugin](https://github.com/zdharma/zplugin) can install git-extras by using:
+
+```zsh
+zplugin ice as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
+zplugin light tj/git-extras
+```
+
+`$ZPFX` is `~/.zplugin/polaris` by default. Use `zplugin update tj/git-extras` to update.
+This method installs in `$HOME`, so you don't need to ask administrator to install package.
 
 ## Updating
 
