@@ -33,6 +33,11 @@ $ sudo apt-get install git-extras
 $ nix-env -i git-extras
 ```
 
+### CRUX
+
+[Abdullah](https://github.com/AWAN) has written a [Pkgfile](https://abdullah.today/ports/git-extras/Pkgfile) for his beloved [distro](https://crux.nu).
+
+
 ### Mac OS X with Homebrew
 
 ```bash
@@ -40,6 +45,12 @@ $ brew install git-extras
 ```
 
 Installing from Homebrew will not give you the option omit certain `git-extras` if they conflict with existing git aliases. To have this option, build from source.
+
+
+### Arch Linux
+
+* [git-extras](https://aur.archlinux.org/packages/git-extras/)
+* [git-extras-git](https://aur.archlinux.org/packages/git-extras-git/)
 
 ### Windows
 
