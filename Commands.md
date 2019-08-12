@@ -30,7 +30,6 @@
  - [`git ignore`](#git-ignore)
  - [`git ignore-io`](#git-ignore-io)
  - [`git info`](#git-info)
- - [`git line-summary`](#git-line-summary)
  - [`git local-commits`](#git-local-commits)
  - [`git lock`](#git-lock)
  - [`git locked`](#git-locked)
@@ -48,6 +47,7 @@
  - [`git release`](#git-release)
  - [`git rename-branch`](#git-rename-branch)
  - [`git rename-tag`](#git-rename-tag)
+ - [`git rename-remote`](#git-rename-remote)
  - [`git repl`](#git-repl)
  - [`git reset-file`](#git-reset-file)
  - [`git root`](#git-root)
@@ -212,10 +212,6 @@ project  : git-extras
     1 Jean Jordaan              0.0%
     1 Daniel Schildt            0.0%
 ```
-
-## git line-summary
-
-  WARNING: git line-summary has been replaced by [`git summary --line`](#git-summary) and will be removed in a future release.
 
 ## git effort
 
@@ -480,7 +476,7 @@ Rename a branch locally, and sync to remote via `git push`.
 
 ```
 # renames any branch
-$ git rename-branch new-name old-name
+$ git rename-branch old-name new-name
 
 # renames current branch
 $ git rename-branch new-name
@@ -509,6 +505,19 @@ $ git tag
 test2
 ```
 
+## git rename-remote
+
+Rename a git remote regardless of name conflict, and then list current git remotes.
+```
+$ git remote -v
+origin	git@myserver.com:myuser/foo.git (fetch)
+origin	git@myserver.com:myuser/foo.git (push)
+upstream	git@myserver.com:myuser/bar.git (fetch)
+upstream	git@myserver.com:myuser/bar.git (push)
+$ git-rename-remote upstream origin
+origin	git@myserver.com:myuser/bar.git (fetch)
+origin	git@myserver.com:myuser/bar.git (push)
+```
 
 ## git reauthor
 

@@ -1,5 +1,14 @@
 # Installing git-extras
 
+## Dependencies
+
+Some commands require extra dependencies which are unavailable in some platforms.
+You may need to install them manually.
+
+Those dependencies are listed below:
+
+* column
+
 ## Installing with a package manager
 
 ### Debian
@@ -74,7 +83,7 @@ in `c:\git`:
 install.cmd "C:\git"
 ```
 
-Last, to use `git line-summary`, `git summary` and `git ignore-io`, you need to copy
+Last, to use `git summary` and `git ignore-io`, you need to copy
 `column.exe` from a [msys2][1] installation from `folder-your-msys2-installed/usr/bin`
 to `folder-your-git-installed/usr/bin` or wait for git 2.7.1, which will include column.exe.
 
@@ -83,6 +92,8 @@ to `folder-your-git-installed/usr/bin` or wait for git 2.7.1, which will include
 Use the instructions to build from source below. Make sure you are using `gmake` (GNU `make`) instead of `make`.
 
 ## Building from source
+
+Read [Dependencies](#dependencies) and ensure they are installed.
 
 Obtain the git-extras source by cloning [its GitHub repo](https://github.com/tj/git-extras.git) or downloading a tarball of a [release](https://github.com/tj/git-extras/releases). Then install it by doing `make install` from the source tree.
 
